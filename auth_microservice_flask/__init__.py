@@ -1,0 +1,1 @@
+from auth_microservice_flask.auth_microservice_flask import create_app

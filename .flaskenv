@@ -1,0 +1,4 @@
+FLASK_APP=auth_microservice_flask
+FLASK_ENV=development
+FLASK_DEBUG=1
+
