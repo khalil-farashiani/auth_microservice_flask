@@ -1,0 +1,1 @@
+from auth_microservice_flask.resource  import apiv1
