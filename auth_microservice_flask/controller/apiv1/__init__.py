@@ -1,0 +1,1 @@
+from auth_microservice_flask.controller.apiv1.user import UserController

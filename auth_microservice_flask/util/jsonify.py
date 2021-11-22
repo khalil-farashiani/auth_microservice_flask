@@ -2,7 +2,7 @@ from flask import current_app
 
 
 DEBUG_MSG_CODE = {
-    "100": "OK"
+    "100": "OK",
 }
 
 def jsonify(state={}, metadata={}, status=200, code=100, headers={}):
