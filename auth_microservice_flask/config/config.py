@@ -2,7 +2,7 @@ from os import environ
 
 class Config:
 
-    # ================== Global Configuration=====================
+    # ================== Global Configuration =======================
 
     ENV = environ.get("AUTHMAN_ENV", "production")
 
@@ -10,13 +10,22 @@ class Config:
 
     DEBUG = int(environ.get("AUTHMAN_DEBUG", "0"))
 
+    TIMEZONE = environ.get("AUTHMAN_TIMEZONE", "Asia/Tehran")
 
-    # ================== Database Configuration=====================
+    # ================== Database Configuration =====================
 
-    SQLALCHEMY_DATABASE_URI = environ.get("AUTHMAN_DATABASEURI", None)
+    SQLALCHEMY_DATABASE_URI = environ.get("AUTHMAN_DATABASE_URI", None)
 
     SQLALCHEMY_ECHO = DEBUG
 
     SQLALCHEMY_RECORF_QUERIES = DEBUG
 
     SQLALCHEMY_TRACK_MODIFICATION = DEBUG
+
+
+    # ==================== User Configuration =======================
+
+    USER_DEFUALT_ROLE = environ.get("AUTHMAN_USER_DEFAULT_ROLE", "member")
+
+    USER_DEFUALT_EXPIRES = environ.get("AUTHMAN_USER_DEFAULT_EXPIRES")
+
