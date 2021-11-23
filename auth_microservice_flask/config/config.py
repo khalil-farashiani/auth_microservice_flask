@@ -27,5 +27,7 @@ class Config:
 
     USER_DEFUALT_ROLE = environ.get("AUTHMAN_USER_DEFAULT_ROLE", "member")
 
-    USER_DEFUALT_EXPIRES = environ.get("AUTHMAN_USER_DEFAULT_EXPIRES")
+    USER_DEFUALT_EXPIRES = int(environ.get("AUTHMAN_USER_DEFAULT_EXPIRES", "365"))
+
+    USER_DEFUALT_STATUS = int(environ.get("AUTHMAN_USER_DEFAULT_STATUS", "3"))
 
