@@ -14,14 +14,14 @@ class Config:
 
     # ================== Database Configuration =====================
 
-    SQLALCHEMY_DATABASE_URI = environ.get("AUTHMAN_DATABASE_URI", None)
+    SQLALCHEMY_DATABASE_URI = environ.get("AUTHMAN_DATABASE_URL", "mysql+pymysql://root:12345@localhost/auth_microservice_flask")
 
     SQLALCHEMY_ECHO = DEBUG
 
     SQLALCHEMY_RECORF_QUERIES = DEBUG
 
-    # SQLALCHEMY_TRACK_MODIFICATION = DEBUG
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_TRACK_MODIFICATION = DEBUG
+    # SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
     # ==================== User Configuration =======================

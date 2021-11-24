@@ -1,0 +1,1 @@
+from auth_microservice_flask.schema.apiv1.user import UserSchema

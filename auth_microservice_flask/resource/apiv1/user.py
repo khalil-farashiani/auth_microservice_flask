@@ -9,7 +9,7 @@ class UserResource(Resource):
         GET /users --> Get list of users
         GET /users/<user_id> --> Get user info
         """
-        if user_id is not None:
+        if user_id is None:
             return UserController.get_users() # Get list of users
         else:
             return UserController.get_user(user_id) # Get user info
