@@ -20,7 +20,8 @@ class Config:
 
     SQLALCHEMY_RECORF_QUERIES = DEBUG
 
-    SQLALCHEMY_TRACK_MODIFICATION = DEBUG
+    # SQLALCHEMY_TRACK_MODIFICATION = DEBUG
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
     # ==================== User Configuration =======================

@@ -2,6 +2,7 @@ from auth_microservice_flask.util  import jsonify
 
 
 class UserController:
+    
     def get_users():
         return jsonify(status=500)
 
@@ -16,3 +17,4 @@ class UserController:
 
     def delete_user(user_id):
         return jsonify(status=500)
+
