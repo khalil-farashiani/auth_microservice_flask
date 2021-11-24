@@ -6,15 +6,18 @@ from auth_microservice_flask.schema.apiv1  import UserSchema
 class UserController:
     
     def get_users():
-        user_schema = UserSchema(many=True)
+        users_schema = UserSchema(many=True)
         users = User.query.all()
 
         return jsonify(
-            {"users": user_schema.dump(users)}
+            {"users": users_schema.dump(users)}
         )
 
     def get_user(user_id):
-        return jsonify(status=500)
+        user_schema = UserSchema()
+        user = User.query.get(user_id)
+        if user is None:
+            return jsonify(status = 404, code = 101)
 
     def create_user():
         return jsonify(status=500)
