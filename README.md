@@ -30,6 +30,8 @@ flask db migrate
 
 flask run
 ```
+or you can run it by docker
+
 finally open localhost:5000/api/v1 on your browser
 
 ## Author
