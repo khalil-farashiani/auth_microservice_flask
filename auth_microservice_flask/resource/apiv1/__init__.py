@@ -1,5 +1,6 @@
 from auth_microservice_flask.auth_microservice_flask import apiv1 as api
 from auth_microservice_flask.resource.apiv1.user import UserResource
+from auth_microservice_flask.resource.apiv1.auth import AuthResource
 
 api.add_resource(
     UserResource,

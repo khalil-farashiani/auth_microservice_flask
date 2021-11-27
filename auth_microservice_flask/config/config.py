@@ -11,10 +11,12 @@ class Config:
     DEBUG = int(environ.get("AUTHMAN_DEBUG", "0"))
 
     TIMEZONE = environ.get("AUTHMAN_TIMEZONE", "Asia/Tehran")
+    
+    SECRET_KEY = environ.get("AUTHMAN_SECRET_KEY", "HARD_HARD_SECRET_KEY")
 
-    # ================== Database Configuration =====================
+    # ================== Database Configu#FFFFFF#FFFFFF#FFFFFF#FFFFFFration =====================
 
-    SQLALCHEMY_DATABASE_URI = environ.get("AUTHMAN_DATABASE_URL", "mysql+pymysql://root:12345@localhost/auth_microservice_flask")
+     SQLALCHEMY_DATABASE_URI = environ.get("AUTHMAN_DATABASE_URI", None)
 
     SQLALCHEMY_ECHO = DEBUG
 
@@ -31,4 +33,8 @@ class Config:
     USER_DEFUALT_EXPIRES = int(environ.get("AUTHMAN_USER_DEFAULT_EXPIRES", "365"))
 
     USER_DEFUALT_STATUS = int(environ.get("AUTHMAN_USER_DEFAULT_STATUS", "3"))
+    
+    USER_DEFAULT_TOKEN_EXPIRY_TIME = int(environ.get("AUTHMAN_USER_DEFAULT_TOKEN_EXPIRY_TIME", "86400"))
+
+    USER_DEFAULT_TOKEN_ALGO = environ.get("AUTHMAN_USER_DEFAULT_TOKEN_ALGO", "HS512")
 
