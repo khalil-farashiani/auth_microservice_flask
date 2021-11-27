@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Maintainer, Saeid Bostandoust <ssbostan@linuxmail.org>
+
+for _ in {1..10}; do
+    echo "INFO: Running database upgrade command, try $_."
+    flask db upgrade &> /dev/null
+    rc=$?
+    if [[ $rc -eq 0 ]]; then
+        break
+    fi
+    sleep 3
+done
+
+if [[ $rc -ne 0 ]]; then
+    echo "ERROR: Cannot upgrade database."
+    exit 1
+else
+    echo "INFO: Database upgraded successfully."
+fi
+
+echo "INFO: Going to start application..."
+
+gunicorn -b 0.0.0.0:8080 -w 4 \
+  --access-logfile - \
+  --error-logfile - \
+  "authman:create_app()"
